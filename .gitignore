@@ -26,3 +26,4 @@ replay_pid*
 /mvnw.cmd
 /HELP.md
 /.idea/
+/src/main/resources/application.properties
