@@ -15,11 +15,11 @@ public class ChallengeAttempt {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="challenge_attempt_generator")
     private Long id;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "USER_ID", referencedColumnName="ID")
-//    private User user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID", referencedColumnName="ID")
+    private User user;
 
-    private Long user_id;
+//    private Long user_id;
 
     @Column(name = "factora")
     private int factorA;

@@ -1,4 +1,4 @@
-package com.ichtus.braingame.multiplication.challenge;
+package com.ichtus.braingame.multiplication.user;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;

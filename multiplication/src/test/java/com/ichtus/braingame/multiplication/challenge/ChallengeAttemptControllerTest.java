@@ -44,7 +44,7 @@ public class ChallengeAttemptControllerTest {
         User user = new User(1L, alias);
         long attemptId = 5L;
         ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(50, 70, alias, 3500);
-        ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user.getId(), 50, 70, 3500, true);
+        ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user, 50, 70, 3500, true);
         // когда сервис будет вызван с объектом эквивалентным attemptDTO
         // верни expectedResponse
         given(challengeService.verifyAttempt(eq(attemptDTO))).willReturn(expectedResponse);
@@ -60,7 +60,7 @@ public class ChallengeAttemptControllerTest {
 
     @Test
     void postInvalidResult() throws Exception {
-        ChallengeAttempt expectedResponse = new ChallengeAttempt(5L, 1L,
+        ChallengeAttempt expectedResponse = new ChallengeAttempt(5L, new User(1L, "john"),
                 50, 70, 3500, true);
         MockHttpServletResponse response = mockMvc.perform(
                         post("/attempts").contentType(MediaType.APPLICATION_JSON)

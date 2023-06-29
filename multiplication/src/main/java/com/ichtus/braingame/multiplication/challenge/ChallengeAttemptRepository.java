@@ -9,7 +9,7 @@ public interface ChallengeAttemptRepository extends CrudRepository<ChallengeAtte
     /**
      * @return the last 10 attempts for a given user, identified by their alias.
      * */
-    @Query("SELECT a FROM challenge_attempt a WHERE a.user_id = ?1 ORDER BY a.id DESC")
+    @Query("SELECT a FROM challenge_attempt a WHERE a.user.id = ?1 ORDER BY a.id DESC")
     List<ChallengeAttempt> findTop10ByUserIdOrderByIdDesc(Long userId);
 
 //    /**

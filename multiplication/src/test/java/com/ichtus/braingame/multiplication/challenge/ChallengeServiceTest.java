@@ -2,6 +2,7 @@ package com.ichtus.braingame.multiplication.challenge;
 
 
 import com.ichtus.braingame.multiplication.user.User;
+import com.ichtus.braingame.multiplication.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

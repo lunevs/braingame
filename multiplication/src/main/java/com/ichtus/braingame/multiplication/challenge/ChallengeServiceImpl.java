@@ -1,6 +1,7 @@
 package com.ichtus.braingame.multiplication.challenge;
 
 import com.ichtus.braingame.multiplication.user.User;
+import com.ichtus.braingame.multiplication.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
         boolean isCorrect = attemptDTO.getGuess() == attemptDTO.getFactorA() * attemptDTO.getFactorB();
 
-        ChallengeAttempt attempt = new ChallengeAttempt(null, user.getId(),
+        ChallengeAttempt attempt = new ChallengeAttempt(null, user,
                 attemptDTO.getFactorA(), attemptDTO.getFactorB(), attemptDTO.getGuess(), isCorrect);
 
         ChallengeAttempt storedAttempt = challengeAttemptRepository.save(attempt);

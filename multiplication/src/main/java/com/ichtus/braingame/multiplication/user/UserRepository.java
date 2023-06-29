@@ -1,4 +1,4 @@
-package com.ichtus.braingame.multiplication.challenge;
+package com.ichtus.braingame.multiplication.user;
 
 import com.ichtus.braingame.multiplication.user.User;
 import org.springframework.data.jpa.repository.Query;
