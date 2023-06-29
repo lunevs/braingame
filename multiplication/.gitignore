@@ -25,3 +25,4 @@ replay_pid*
 /HELP.md
 /.idea/
 /src/main/resources/application.properties
+/src/main/resources/static/
