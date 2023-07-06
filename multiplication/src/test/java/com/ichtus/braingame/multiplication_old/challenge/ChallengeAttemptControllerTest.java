@@ -1,7 +1,6 @@
-package com.ichtus.braingame.multiplication.challenge;
+package com.ichtus.braingame.multiplication_old.challenge;
 
-import com.ichtus.braingame.multiplication.user.User;
-import org.junit.jupiter.api.BeforeEach;
+import com.ichtus.braingame.multiplication_old.user.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

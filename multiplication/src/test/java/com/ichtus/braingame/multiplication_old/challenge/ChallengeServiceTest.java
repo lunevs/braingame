@@ -1,8 +1,8 @@
-package com.ichtus.braingame.multiplication.challenge;
+package com.ichtus.braingame.multiplication_old.challenge;
 
 
-import com.ichtus.braingame.multiplication.user.User;
-import com.ichtus.braingame.multiplication.user.UserRepository;
+import com.ichtus.braingame.multiplication_old.user.User;
+import com.ichtus.braingame.multiplication_old.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -39,14 +39,14 @@ public class ChallengeServiceTest {
         ChallengeAttempt attempt = challengeService.verifyAttempt(attemptDTO);
         then(attempt.isCorrect()).isTrue();
 
-        verify(userRepository).save(new User(userAlias));
+        verify(userRepository).save(new User(null, userAlias, null));
         verify(attemptRepository).save(attempt);
     }
 
     @Test
     public void checkExistingUserTest() {
         // given
-        User existingUser = new User(1L, "john");
+        User existingUser = new User(1L, "john", null);
         given(userRepository.findByAlias(existingUser.getAlias()))
                 .willReturn(Optional.of(existingUser));
         ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(30, 40, existingUser.getAlias(), 1200);
